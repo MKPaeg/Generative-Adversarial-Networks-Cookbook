@@ -1,2 +1,2 @@
 #/bin/bash
-nvidia-docker build -t base_image . 
+nvidia-docker build -t base_image2 . 

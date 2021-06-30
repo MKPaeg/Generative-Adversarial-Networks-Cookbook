@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class Trainer:
-    def __init__(self, width = 28, height= 28, channels = 1, latent_size=100, epochs =50000, batch=32, checkpoint=50,model_type=-1):
+    def __init__(self, width = 28, height= 28, channels = 1, latent_size=100, epochs =500000, batch=32, checkpoint=50,model_type=-1):
         self.W = width
         self.H = height
         self.C = channels
@@ -72,6 +72,9 @@ class Trainer:
                         
             if e % self.CHECKPOINT == 0 :
                 self.plot_checkpoint(e)
+
+        self.gan.gan_model.save('./data/ch3_model')
+        self.gan.gan_model.save('./data/ch3_h5_model.h5')
         return
 
     def sample_latent_space(self, instances):
